@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class CajaMovement : MonoBehaviour
 {
-    public float speed;
+public float speed = 0.2f;
+public float incremento = 0.05f;
+private bool estaDetenido = false;
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate (0, -speed, 0);
+        if (!estaDetenido)
+        {
+            transform.Translate(0, -speed, 0);
+        }
     }
+
+    public void AumentarVelocidad()
+    {
+        speed += incremento;
+    }
+
 }

@@ -15,23 +15,26 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.x -2 != -4){
         if(Input.GetKeyDown (KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) ) 
     {
         transform.Translate (-2, 0, 0);
     }
+    }
+    if (transform.position.x +2 != 4){
     if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.D)) 
     {
         transform.Translate (2, 0, 0);
     }
+    }
+    
 
-    void OnCollisionEnter (Collision col) 
+    }
+     void OnCollisionEnter (Collision col)
     {
         if (col.gameObject.CompareTag("Caja"))
         {
             Destroy (gameObject);
         }
-        Destroy (gameObject);
-    }
-
     }
 }
